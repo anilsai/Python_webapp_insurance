@@ -42,12 +42,12 @@ class InsuranceField(Base):
     name = Column(String(90), nullable=False)
     id = Column(Integer, primary_key=True)
     Address = Column(String(300))
-    Date = Column(String(20))
-    InsuredValue = Column(String(10))
-    Make = Column(String(10))
-    Model = Column(String(10))
+    # Date = Column(String(20))
+    InsuredValue = Column(String(20))
+    Type = Column(String(10))
+    # Model = Column(String(10))
     insurance_id = Column(Integer, ForeignKey('insurance.id'))
-    insuracne = relationship(Insurance)
+    insurance = relationship(Insurance)
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
 
@@ -61,7 +61,7 @@ class InsuranceField(Base):
             'Address': self.Address,
             'id': self.id,
             'InsuredValue': self.InsuredValue,
-            'Make': self.Make,
+            'Type': self.Make,
             'Model': self.Model,
             'Date': self.Date,
         }
