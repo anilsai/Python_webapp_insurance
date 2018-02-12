@@ -4,43 +4,43 @@
 	{% if item %}
 	<h1>Edit Insurance policy:</h1>
 
-	<form action="{{url_for('editinsuranceField', insurance_id=insurance_id, policyID=item.id )}}" method = 'POST'>
+	<form action="{{url_for('editinsuranceField', insurance_id=insurance_id, insurancefield_id=item.id )}}" method = 'POST'>
 
 		<dl>
 			<dt>Name:</dt>
 				<dd><input type ='text' size='30' name='name' placeholder = '{{item.name }}'></dd>
-			<dt>Description:</dt>
-				<dd><textarea name = 'description' rows='5' cols='40' placeholder = '{{item.description }}'></textarea></dd>
-			<dt>Price:</dt>
+			<dt>Address:</dt>
+				<dd><textarea name = 'Address' rows='2' cols='30' placeholder = '{{item.Address }}'></textarea></dd>
+			<dt>Insured Value:</dt>
 				<dd><input type = 'text' size = '8' name='price' placeholder = '{{item.price}}'></dd>
-			<dt>Course:</dt>
+			<dt>Type:</dt>
 
-			{% if item.course == 'Appetizer' %}
-				<dd><input type ='radio' name='course' value='Appetizer' checked>Appetizer</dd>
+			{% if item.Type == 'Auto' %}
+				<dd><input type ='radio' name='Type' value='Auto' checked>Auto</dd>
 			{%else%}
-			<dd><input type ='radio' name='course' value='Appetizer'>Appetizer</dd>
+			<dd><input type ='radio' name='Type' value='Auto'>Auto</dd>
 		    {% endif %}
 
-		    {% if item.course == 'Entree' %}
-		       <dd><input type ='radio' name='course' value='Entree' checked>Entree</dd>
+		    {% if item.Type == 'Renters' %}
+		       <dd><input type ='radio' name='Type' value='Renters' checked>Renters</dd>
 
 		    {%else%}
-				<dd><input type ='radio' name='course' value='Entree'>Entree</dd>
+				<dd><input type ='radio' name='Type' value='Renters'>Renters</dd>
 		    {% endif %}
 
-			{% if item.course == 'Dessert'%}
-				<dd><input type ='radio' name='course' value='Dessert'checked>Dessert</dd>
+			{% if item.Type == 'Prize'%}
+				<dd><input type ='radio' name='Type' value='Prize' checked>Prize</dd>
 
 			{% else %}
-			   <dd><input type ='radio' name='course' value='Dessert'>Dessert</dd>
+			   <dd><input type ='radio' name='Type' value='Prize'>Prize</dd>
 
 			{% endif %}
 
 
-			{%if item.course =='Beverage'%}
-				<dd><input type ='radio' name='course' value='Beverage'checked >Beverage</dd>
+			{%if item.Type =='Home'%}
+				<dd><input type ='radio' name='Type' value='Home' checked >Home</dd>
 			{% else %}
-				<dd><input type ='radio' name='course' value='Beverage'>Beverage</dd>
+				<dd><input type ='radio' name='Type' value='Home'>Home</dd>
 			{% endif %}
 
 		</dl>

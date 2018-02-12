@@ -3,9 +3,9 @@
 {% include "header.html" %}
 <h1> Are you sure you want to delete {{item.name}}? </h1>
 
-<form action="{{ url_for('deleteInsuItem', insurance_id=insurance_id, policyID=item.id)}}" method = 'post'>
+<form action="{{ url_for('deleteInsuItem', insurance_id=insurance_id, insurancefield_id=item.id)}}" method = 'post'>
     <input type='submit', value = 'Delete'>
 </form>
 
-<a href = "{{ url_for('insurancePolicyL')}}"> Cancel </a>
+<a href = "{{ url_for('insurancePolicyL', insurance_id = item.insurance_id)}}"> Cancel </a>
 {% endblock %}

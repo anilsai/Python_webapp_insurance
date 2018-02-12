@@ -8,11 +8,11 @@
 {% for i in items %}
 <div>
     <p>{{i.name}}</p>
-    <p>{{i.description}}</p>
-    {% if i.price.startswith("$") %}
-    <p> {{i.price}} </p>
+    <p>{{i.Address}}</p>
+    {% if i.InsuredValue.startswith("$") %}
+    <p> {{i.InsuredValue}} </p>
     {% else %}
-    <p> {{"$"+i.price}} </p>
+    <p> {{"$"+i.InsuredValue}} </p>
     {% endif %}
 </div>
 

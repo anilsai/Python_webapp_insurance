@@ -28,7 +28,7 @@ session.add(User1)
 session.commit()
 
 # Insurances for Mr.XYZ
-insurance1 = Insurance(user_id=1, name="Inusrance for Mr. XYZ ")
+insurance1 = Insurance(user_id=1, name="Mr. XYZ ")
 
 session.add(insurance1)
 session.commit()
@@ -61,35 +61,35 @@ session.commit()
 
 
 
-# # Insurances for Mr.ABC
-# insurance2 = Insurance(user_id=1, name="Inusrance for Mr. ABC ")
+# Insurances for Mr.ABC
+insurance2 = Insurance(user_id=1, name=" Mr. ABC ")
 
-# session.add(insurance1)
-# session.commit()
+session.add(insurance1)
+session.commit()
 
-# InsTypeItem1 = InsuranceField(user_id=1, name="Auto", Address="Sonic drive",
-#                      InsuredValue="$99000.00", Type="Auto", insurance=insurance2)
+InsTypeItem1 = InsuranceField(user_id=1, name="Auto", Address="Sonic drive",
+                     InsuredValue="$99000.00", Type="Auto", insurance=insurance2)
 
-# session.add(InsTypeItem1)
-# session.commit()
+session.add(InsTypeItem1)
+session.commit()
 
 
-# InsTypeItem2 = InsuranceField(user_id=1, name="Renters", Address="seriously  Dr",
-#                      InsuredValue="99999.00", Type="Rent", insurance=insurance2)
+InsTypeItem2 = InsuranceField(user_id=1, name="Renters", Address="seriously  Dr",
+                     InsuredValue="99999.00", Type="Rent", insurance=insurance2)
 
-# session.add(InsTypeItem2)
-# session.commit()
+session.add(InsTypeItem2)
+session.commit()
 
-# InsTypeItem3 = InsuranceField(user_id=1, name="Prize", Address="No where",
-#                      InsuredValue="9009000.00", Type="Prize", insurance=insurance2)
+InsTypeItem3 = InsuranceField(user_id=1, name="Prize", Address="No where",
+                     InsuredValue="9009000.00", Type="Prize", insurance=insurance2)
 
-# session.add(InsTypeItem3)
-# session.commit()
+session.add(InsTypeItem3)
+session.commit()
 
-# InsTypeItem4 = InsuranceField(user_id=1, name="Prize", Address="apple park",
-#                      InsuredValue="343400.00", Type="Home", insurance=insurance2)
+InsTypeItem4 = InsuranceField(user_id=1, name="Prize", Address="apple park",
+                     InsuredValue="343400.00", Type="Home", insurance=insurance2)
 
-# session.add(InsTypeItem4)
-# session.commit()
+session.add(InsTypeItem4)
+session.commit()
 
-print "added menu items!"
+print "added Insurance items!"

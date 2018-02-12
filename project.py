@@ -419,7 +419,7 @@ def editinsuranceField(insurance_id, insurancefield_id):
 
         return render_template('editInsTypeitem.html',
                                insurance_id=insurance_id,
-                               policyID=policyID, item=editinsfpolicy)
+                               policyID=insurancefield_id, item=editinsfpolicy)
 
 
 # Created a route for deleteMenuItem function here
@@ -443,9 +443,9 @@ def deleteInsuItem(insurance_id, insurancefield_id):
                                 insurance_id=insurance_id))
     else:
 
-        return render_template('deleteinsurancetype.html',
+        return render_template('deleteinsurancetypeitem.html',
                                insurance_id=insurance_id,
-                               policyID=policyID, item=delInsuranceItem)
+                               policyID=insurancefield_id, item=delInsuranceItem)
 
 
 if __name__ == '__main__':
