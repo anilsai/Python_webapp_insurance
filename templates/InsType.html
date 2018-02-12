@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "header.html" %}
+{% include "messageFlash.html" %}
+
+<p><strong>Current User: {{user.name}}</strong></p>
+</br>
+<h1><strong>Insurance Name: {{insurance.name}}</strong></h1>
+
+<div><a href = "{{url_for('insuranceNameL') }}">Home</a></div>
+<div><a href = "{{url_for('newInsurancePolicy',  insurance_id = insurance.id) }}">Add Item</a></div>
+</br>
+</br>
+{% for i in items %}
+
+<div>
+    <p>{{i.name}}</p>
+    <p>{{i.description}}</p>
+    {% if i.price.startswith("$") %}
+    <p> {{i.price}} </p>
+    {% else %}
+    <p> {{"$"+i.price}} </p>
+    {% endif %}
+    <a href = "{{url_for('editinsuranceField', insurance_id = insurance.id, insurancefield_id = i.policies) }}">Edit</a>
+    </br>
+    <a href = "{{url_for('deleteInsuItem', insurance_id = insurance.id, policies = i.policies ) }}">Delete</a>
+    </br>
+    </br>
+</div>
+
+
+{% endfor %}
+
+{% endblock %}

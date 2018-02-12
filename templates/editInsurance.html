@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "header.html" %}
+	<h1>Edit Insurance policy:</h1>
+  	<form action="{{url_for('insuranceEdit', insurance_id=insurance_id )}}" method = 'POST'>
+		<input type='text' size='30' name='name' placeholder="{{insurance.name}}">
+		<input type='submit' value='Edit'>
+	</form>
+  	<a href="{{url_for('insuranceNameL')}}">Cancel</a>
+
+{% endblock %}

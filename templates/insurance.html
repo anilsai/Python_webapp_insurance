@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "header.html" %}
+{% include "messageFlash.html" %}
+<p style="color: 000000"><strong>Current User: {{user.name}}</strong></p>
+<a href = "{{url_for('insuranceNew') }}">New Insurance</a>
+
+{% for ins in insurance %}
+<p><strong>{{ins.name}}</strong></p>
+<a href = "{{url_for('insuranceEdit', insurance_id = ins.id) }}">Edit</a>
+</br>
+<a href = "{{url_for('insuranceDelete', insurance_id = ins.id) }}">Delete</a>
+</br>
+<a href = "{{url_for('insurancePolicyL', insurance_id = ins.id) }}">Type</a>
+</br>
+</br>
+  {% endfor %}
+
+
+{% endblock %}
